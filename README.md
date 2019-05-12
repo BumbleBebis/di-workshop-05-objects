@@ -137,37 +137,43 @@ happens.
 
 | Line                                               | Expected Result | Actual Result | Were you right? Why? |
 | -------------------------------------------------- | --------------- | ------------- | -------------------- |
-| `var alex = {name: 'alex', age: 23, height: 163}`  |                 |               |                      |
-| `alex.name`                                        |                 |               |                      |
-| `alex.age`                                         |                 |               |                      |
-| `alex.age = 1000`                                  |                 |               |                      |
-| `alex` (use the ▶ to expand the object)            |                 |               |                      |
-| `alex.hairColor = 'blue'`                          |                 |               |                      |
-| `alex`                                             |                 |               |                      |
-| `var pet = {name: 'amber', type: 'dog'}`           |                 |               |                      |
-| `pet`                                              |                 |               |                      |
-| `alex.pet = pet`                                   |                 |               |                      |
-| `alex`                                             |                 |               |                      |
-| `pet.name = 'lyla'`                                |                 |               |                      |
-| `alex.pet`                                         |                 |               |                      |
-| `delete alex.pet`                                  |                 |               |                      |
-| `alex.pet`                                         |                 |               |                      |
-| `pet`                                              |                 |               |                      |
-| `alex["name"]`                                     |                 |               |                      |
-| `var someString = 'age'`                           |                 |               |                      |
-| `alex[someString]`                                 |                 |               |                      |
-| `alex[someString] = 23`                            |                 |               |                      |
-| `var weirdObj = {spooky: true}`                    |                 |               |                      |
-| `weirdObj.strange = weirdObj`                      |                 |               |                      |
+| `var alex = {name: 'alex', age: 23, height: 163}`  |   undefined     |   undefined   |                      |
+| `alex.name`                                        |     alex        |    alex       |                      |
+| `alex.age`                                         |     23          |    23         |                      |
+| `alex.age = 1000`                                  |     1000        |    1000       |                      |
+| `alex` (use the ▶ to expand the object)            |name, age, height|name, age height|                      |
+| `alex.hairColor = 'blue'`                          |     blue        |   blue        |                      |
+| `alex`                                             |name, age, heihgt, haircolor|name, age, heihgt, haircolor|
+| `var pet = {name: 'amber', type: 'dog'}`           |     undefined   |  undefined    |                      |
+| `pet`                                              |  name, type     |  name, type   |                      |
+| `alex.pet = pet`                                   |  name, type     |  name, type   |                      |
+| `alex`                                             |name, age, heihgt, haircolor, pet|               |      same           |
+| `pet.name = 'lyla'`                                |    lyla         |   lyla        |                      |
+| `alex.pet`                                         |  name, type     |  name, type   |                      |
+| `delete alex.pet`                                  |   don't know    |   true        |                      |
+| `alex.pet`                                         |   undefined     |   undefined   |                      |
+| `pet`                                              |   undefined     |   name, type  |                      |
+| `alex["name"]`                                     |   alex          |               |                      |
+| `var someString = 'age'`                           |   undefined     |   undefined   |                      |
+| `alex[someString]`                                 |   undefined     |   1000        |                      |
+| `alex[someString] = 23`                            |   23            |   23           |                      |
+| `var weirdObj = {spooky: true}`                    |   undefined     |   undefined   |                      |
+| `weirdObj.strange = weirdObj`                      |   don't know    |               |                      |
 | `weirdObj` (use ▶ to expand - how far does it go?) |                 |               |                      |
 
 Answer the following questions (you might need to do some research!)
 
 1. What is a JavaScript object?
+
+objects are variables that containt many values
+
 1. In a JavaScript object, what are:
    - keys
    - values
    - properties
+
+a name:value pair
+
 1. Why would you use an object in JavaScript
 
 ## Challenge
